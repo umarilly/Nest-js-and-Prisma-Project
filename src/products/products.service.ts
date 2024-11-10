@@ -20,6 +20,11 @@ export class ProductsService {
     return this.databaseService.product.findUnique({
       where: { 
         id,
+      },
+      include: {
+        description: true,
+        tags: true,
+        reviews: true,
       }
     });
   }
